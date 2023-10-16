@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASSIGNMENT_17</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .container{
+            border: 2px solid black;
+            margin-top: 15%;
+            padding: 1%; 
+            border-radius: 10px;
+            background-color: rgb(199, 213, 213);
+        }
+
+        .brand{
+           display: flex;
+           flex-direction: column;
+           align-items: end;
+           color: rgb(0, 0, 0);
+        }
+        
+        .input-dis{
+            margin-bottom: 3%;
+        }
+
+        .display{ 
+            border: 1px solid black;
+            height: 35px ;
+            width: 165px;
+            border-radius: 6%;
+            padding: 4px;
+            font-weight: bold;
+            background-color: rgb(196, 234, 195);
+            text-align: right;
+            font-size: 30px;
+        }
+          
+        .solar{
+            border: 2px solid black;
+            margin-bottom: 3%;
+            height: 10px;
+            width: 40%;
+            padding: 2px;
+            display: flex;
+            border-radius: 3px;
+            margin-left: 50%;
+        }
+
+        .solar div{
+            border: 1px solid black;
+            height: 8px;
+            width: 30%;
+            background-color: rgb(31, 128, 31);
+        }
+
+        .nov-row{
+             padding: 2%;
+             display: flex;
+             justify-content: space-around;
+        }
+
+        .but{
+            font-size: larger;
+            border-radius: 4px;
+            box-shadow: 1px 1px 2px 2px #a09d9d;
+        }
+
+        .but:hover{
+           box-shadow: 0px 2px 2px 2px #8e8d8d;
+           cursor: pointer;
+        }
+
+        .num_but{
+            background-color: rgb(205, 199, 199);
+           border: 3px solid rgb(120, 116, 116);
+           color: white;
+        }
+
+        .pink-but{
+        background-color: rgb(233, 92, 163);
+       }
+
+        .long{
+            width: 55px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <div class="brand">
+            <p style="margin-right: 5px; font-size: 8px;margin-bottom: -12px;">TWO WAY POWER</p>
+            <p style="font-size: 12px;margin-right: 4px;">BAMBOLIO</p>
+        </div>
+        <div class="input-dis">
+            <input type="text" id="dis" class="display" >
+        </div>
+        <div class="solar">
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+        <div class="nov-row">
+            <button class="but num_but" onclick="handleKeyPress('7')">7</button>
+            <button class="but num_but" onclick="handleKeyPress('8')">8</button>
+            <button class="but num_but" onclick="handleKeyPress('9')">9</button>
+            <button class="but long" style="background-color: tomato;" onclick="handleKeyPress('del')">DEL</button> 
+        </div>
+        <div class="nov-row">
+            <button class="but num_but" onclick="handleKeyPress('4')">4</button>
+            <button class="but num_but" onclick="handleKeyPress('5')">5</button>
+            <button class="but num_but" onclick="handleKeyPress('6')">6</button>
+            <button class="but pink-but" onclick="handleKeyPress('*')">x</button> 
+            <button class="but pink-but" style="font-size:14px;" onclick="handleKeyPress('/')">÷</button> 
+        </div>
+        <div class="nov-row">
+            <button class="but num_but" onclick="handleKeyPress('1')">1</button>
+            <button class="but num_but" onclick="handleKeyPress('2')">2</button>
+            <button class="but num_but" onclick="handleKeyPress('3')">3</button>
+            <button class="but pink-but" onclick="handleKeyPress('+')">+</button> 
+            <button class="but pink-but" onclick="handleKeyPress('-')">-</button> 
+        </div>
+        <div class="nov-row">
+            <button class="but pink-but" onclick="handleKeyPress('.')">.</button>
+            <button class="but long num_but" onclick="handleKeyPress('0')">0</button>
+            <button class="but long pink-but" onclick="handleKeyPress('=')">=</button> 
+        </div>
+    </div>
+    <script>
+        function handleKeyPress(keyIn)
+        {
+           let outPut = document.getElementById("dis");
+           if(keyIn == '=')
+           outPut.value = eval(outPut.value);
+           else if(keyIn == 'del')
+           outPut.value='';
+           else
+           outPut.value = outPut.value + keyIn;
+        }
+
+    </script>
+</body>
+</html>
